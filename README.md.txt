@@ -1,38 +1,84 @@
-Title: Warehouse Inbound & Inventory Accuracy (SQL Server) — BRD to KPI Reporting
+# Warehouse Inbound & Inventory Accuracy (SQL Server) — BRD to KPI Reporting
 
-Overview
-This project models and implements a warehouse inbound receiving workflow and KPI reporting layer, covering inbound shipment capture (BP-2), GRN creation (BP-3), inventory posting job behavior (BP-4), inbound/delayed shipments dashboard (BP-5), and inventory accuracy KPI reporting from physical counts (BP-6).
+## Overview
+This project models and implements a warehouse inbound receiving workflow and KPI reporting layer, covering:
+- **BP-2:** Inbound shipment capture
+- **BP-3:** GRN (Goods Receipt Note) creation
+- **BP-4:** Inventory posting job/system behavior
+- **BP-5:** Inbound & delayed shipments dashboard metrics
+- **BP-6:** Inventory accuracy KPI reporting using physical counts
 
-Business problem
-Inbound receiving and inventory updates were spreadsheet-driven, causing errors, low visibility into delays, and reduced inventory accuracy.
+The repository includes **BA artifacts (BRDs, wireframes, data dictionaries, UAT)** and a **SQL Server implementation (schema, seed data, and T-SQL queries)**.
 
-What I built (scope)
-	•	BP-2: Inbound shipment capture rules (validations, duplicate prevention, status)
-	•	BP-3: GRN header/line capture with discrepancy handling (Short/Over/Damaged/OK)
-	•	BP-4: Inventory posting logic (Complete + unposted only, audit via stock movement, prevent double posting)
-	•	BP-5: Inbound dashboard metrics and delayed shipment drill-down
-	•	BP-6: Inventory accuracy KPI using physical_count_snapshot vs system_qty + mismatch report
+---
 
-Tools/skills demonstrated
-Business analysis (BRD, user stories/AC, wireframes, data dictionary), Jira (Epics/Stories/Subtasks), SQL Server (schema design, seeded dataset, T-SQL queries), UAT design and traceability.
+## Business Problem
+Inbound receiving and inventory updates were spreadsheet-driven, leading to:
+- data entry errors and duplicate records,
+- low visibility into delayed inbound shipments,
+- inventory mismatches between system stock and physical counts.
 
-How to run (SQL Server)
-	1.	Run sql/01_schema.sql
-	2.	Run sql/02_seed_data.sql
-	3.	Run dashboard queries in sql/03_bp5_inbound_dashboard_queries.sql
-	4.	Run accuracy queries in sql/04_bp6_inventory_accuracy_queries.sql
+---
 
-Key outputs
-	•	Delayed shipments (definition aligned to BRD)
-	•	On-time delivery %, inbound trends, supplier delay analysis
-	•	Inventory accuracy % by location/category + mismatch action list
+## What I Built (Scope)
+### BP-2 — Record Inbound Shipment Details
+- Captured inbound shipment header details with validation rules (mandatory fields, duplicate Shipment ID prevention, numeric/date checks)
+- Standardized shipment status tracking for inbound visibility
 
-Repo map
-	•	/docs contains BRDs, wireframes, data dictionaries, and UAT
-	•	/sql contains schema, seed data, and reporting queries
+### BP-3 — Capture Received Quantity and Create GRN
+- Created GRN header + line item capture (SKU-level)
+- Supported discrepancy classification: **Short / Over / Damaged / OK**
+- Defined Draft vs Complete lifecycle and exception handling
 
-Limitations (as per BRDs)
-Out-of-scope items such as carrier integrations, detailed QC workflows, and financial valuation are not implemented.
+### BP-4 — Inventory Update Job (System Behavior)
+- Defined posting rules: process only **Complete + unposted** GRNs
+- Updated `inventory_on_hand` and created auditable entries in `stock_movement`
+- Prevented double-posting via idempotency rules
 
-Future improvements
-(Optional, keep realistic): Power BI dashboard built on these queries; automated posting stored procedure; role-based access; damaged stock location handling.
+### BP-5 — Inbound & Delayed Shipments Dashboard
+- Defined KPIs and drill-down logic for delayed shipments
+- Supported filtering by date range / supplier / warehouse
+- Included trend and supplier delay analysis requirements
+
+### BP-6 — Inventory Accuracy KPI
+- Calculated accuracy using `physical_count_snapshot` vs `system_qty`
+- Reported accuracy by **location/category**
+- Produced mismatch action list with variance (physical − system)
+
+---
+
+## Tools & Skills Demonstrated
+- **Business Analysis:** BRD, user stories & acceptance criteria, wireframes, data dictionary
+- **Delivery Tracking:** Jira (**Epics / Stories / Subtasks**)
+- **Testing:** UAT test case design and traceability
+- **Data & SQL:** SQL Server schema design, seeded dataset, T-SQL KPI/query development
+
+---
+
+## Repository Map
+- `sql/` → SQL Server schema, seed data, KPI/dashboard queries  
+- `docs/` → BRDs, wireframes, data dictionaries, UAT artifacts  
+- `assets/` → diagrams and supporting visuals (wireframes / flows / screenshots)
+
+---
+
+## How to Run (SQL Server)
+Run scripts in this order:
+1. `sql/01_schema.sql`
+2. `sql/02_seed_data.sql`
+3. `sql/03_bp5_inbound_dashboard_queries.sql` (Inbound dashboard KPIs + delayed shipment drill-down)
+4. `sql/04_bp6_inventory_accuracy_queries.sql` (Accuracy KPIs + mismatch reports)
+
+> Recommended: execute in **SQL Server Management Studio (SSMS)** or **Azure Data Studio**.
+
+---
+
+## Key Outputs
+- **Delayed Shipments:** delayed shipment identification + drill-down details (aligned to BRD logic)
+- **Inbound Performance:** on-time delivery %, inbound trends, supplier delay analysis
+- **Inventory Control:** inventory accuracy % by location/category + mismatch variance action list
+
+---
+
+## Notes / Limitations
+This repo focuses on requirements + SQL implementation for KPI reporting and traceability. Items such as carrier integrations, detailed QC workflows, and financial valuation are intentionally out of scope per the BRDs.
